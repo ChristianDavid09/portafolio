@@ -13,13 +13,22 @@
 
 /* TÍTULO DE BIENVENIDA */
 
+
 .titulo-bienvenida {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 500;
     text-align: center;
-    color: white;
+    color: #F5F0FF;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    margin-bottom: 35px;
+}
 
-    font-size: 38px;
-
-    margin-bottom: 45px;
+@media (max-width: 600px) {
+    .titulo-bienvenida {
+        font-size: 34px;
+    }
 }
 
 /* DISTRIBUCIÓN DE CONTENEDORES */
@@ -105,11 +114,7 @@
         grid-template-columns: 1fr;
     }
 
-    
-/* CONTENEDOR DE LA FOTOGRAFÍA */
 
-
-/* CONTENEDOR DE LA FOTOGRAFÍA */
 
 
 /* CONTENEDOR DE LA FOTOGRAFÍA */
@@ -150,3 +155,56 @@
         padding: 25px;
     }
 }
+
+
+.botones-presentacion {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.boton-cv,
+.boton-descargar-cv {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 12px 20px;
+    border-radius: 8px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.boton-cv {
+    background: #BFA0FF;
+    color: #211B30;
+}
+
+.boton-cv:hover {
+    background: #D6BFFF;
+    transform: translateY(-3px);
+}
+
+.boton-descargar-cv {
+    border: 1px solid #BFA0FF;
+    color: #D6BFFF;
+}
+
+.boton-descargar-cv:hover {
+    background: rgba(191, 160, 255, 0.15);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+    .botones-presentacion {
+        justify-content: center;
+    }
+}
+

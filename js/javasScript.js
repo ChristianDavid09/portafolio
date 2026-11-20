@@ -44,7 +44,31 @@ async function iniciarWeb() {
         "trabajemos-container",
         "components/trabajemos.html"
     );
+    await cargarFooter();
 
 }
 
+async function cargarFooter() {
+    try {
+        const respuesta = await fetch("components/footer.html");
+
+        if (!respuesta.ok) {
+            throw new Error("No se pudo cargar el footer");
+        }
+
+        const html = await respuesta.text();
+
+        document.getElementById("footer-container").innerHTML = html;
+
+        // Año automático
+        document.getElementById("anio-actual").textContent =
+            new Date().getFullYear();
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+
 iniciarWeb();
+

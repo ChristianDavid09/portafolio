@@ -268,3 +268,129 @@
     }
 }
 
+/* PROYECTO EN DESARROLLO */
+
+.proyecto-en-proceso {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #30204f, #7135b8);
+    border-radius: 12px;
+    min-height: 220px;
+}
+
+.proyecto-en-proceso span {
+    color: white;
+    font-size: 38px;
+    font-weight: 800;
+}
+
+/* ESTADO DEL PROYECTO */
+
+.estado-proyecto {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 15px;
+
+    color: #D6BFFF;
+    background: rgba(191, 160, 255, 0.12);
+
+    border: 1px solid #BFA0FF;
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* ENLACE A GITHUB */
+
+.enlace-github-proyectos {
+    text-align: center;
+    margin: 20px auto 40px;
+    padding: 0 20px;
+}
+
+.enlace-github-proyectos p {
+    color: #D8D0E8;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.enlace-github-proyectos a {
+    color: #BFA0FF;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.enlace-github-proyectos a:hover {
+    color: #FFFFFF;
+}
+
+.enlace-github-proyectos a span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.enlace-github-proyectos a:hover span {
+    transform: translate(3px, -3px);
+}
+
+@media (max-width: 600px) {
+    .enlace-github-proyectos {
+        margin: 15px auto 25px;
+    }
+
+    .enlace-github-proyectos p {
+        font-size: 14px;
+    }
+}
+
+/* TECNOLOGÍAS DE CADA PROYECTO */
+
+.tecnologias-proyecto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 18px;
+}
+
+.tecnologias-proyecto span {
+    display: inline-block;
+    padding: 7px 13px;
+
+    background: rgba(191, 160, 255, 0.12);
+    border: 1px solid rgba(191, 160, 255, 0.5);
+    border-radius: 20px;
+
+    color: #D6BFFF;
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.tecnologias-proyecto span:hover {
+    background: #BFA0FF;
+    color: #211B30;
+    transform: translateY(-2px);
+}
+
+/* ADAPTACIÓN MÓVIL */
+
+@media (max-width: 600px) {
+    .tecnologias-proyecto {
+        gap: 7px;
+        margin-top: 14px;
+    }
+
+    .tecnologias-proyecto span {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+}
+
+
+

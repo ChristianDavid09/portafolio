@@ -1,0 +1,67 @@
+
+/* FOOTER */
+
+.footer {
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 25px 7%;
+
+    background: #171321;
+    color: #F5F0FF;
+
+    border-top: 1px solid rgba(191, 160, 255, 0.2);
+}
+
+/* REDES SOCIALES */
+
+.footer-redes {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-redes a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    transition: transform 0.3s ease;
+}
+
+.footer-redes img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.footer-redes a:hover {
+    transform: translateY(-4px);
+}
+
+/* AUTOR */
+
+.footer-autor p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #D8D0E8;
+}
+
+/* MÓVILES */
+
+@media (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+        gap: 18px;
+        padding: 25px 15px;
+        text-align: center;
+    }
+}

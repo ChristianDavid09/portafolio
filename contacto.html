@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contacto | Christian Murillo</title>
+
+    <meta name="description" content="Contacta con Christian Murillo, desarrollador web.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS general -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- CSS de los componentes -->
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/contacto.css">
+</head>
+
+<body>
+
+    <!-- Cabecera -->
+    <div id="header"></div>
+
+    <!-- Contenido de contacto -->
+    <main class="pagina-contacto">
+
+        <section class="contenedor-contacto">
+
+            <p class="etiqueta-contacto">CONTACTO</p>
+
+            <h1>¡Hablemos!</h1>
+
+            <p class="intro-contacto">
+                ¿Tienes una propuesta, un proyecto o una oportunidad laboral?
+                Estaré encantado de leerte.
+            </p>
+
+            <form
+                name="contacto"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                class="formulario-contacto"
+            >
+
+                <input type="hidden" name="form-name" value="contacto">
+
+                <!-- Campo antispam -->
+                <p class="campo-oculto">
+                    <label>
+                        No rellenes este campo:
+                        <input name="bot-field">
+                    </label>
+                </p>
+
+                <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        placeholder="Tu nombre"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="email">Correo electrónico</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="tu@email.com"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="asunto">Asunto</label>
+                    <input
+                        type="text"
+                        id="asunto"
+                        name="asunto"
+                        placeholder="¿De qué quieres hablar?"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea
+                        id="mensaje"
+                        name="mensaje"
+                        rows="6"
+                        placeholder="Escribe aquí tu mensaje..."
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="boton-enviar">
+                    Enviar mensaje →
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="js/contacto.js"></script>
+
+</body>
+</html>
