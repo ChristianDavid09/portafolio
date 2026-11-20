@@ -7,41 +7,93 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-    #presentacion,
-    #proyectos,
-    #habilidades {
-    scroll-margin-top: 100px;
-}
-
-
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     min-height: 100vh;
-    margin: 0;
     padding-top: 85px;
-
-    background: linear-gradient(
-        to bottom,
-        #080812 0%,
-        #100D20 15%,
-        #30205F 35%,
-        #5636A8 50%,
-        #30205F 65%,
-        #100D20 85%,
-        #080812 100%
-    );
-
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: #0b0912;
+    color: #ffffff;
 }
-
-/* IMÁGENES GENERALES */
 
 img {
     max-width: 100%;
+}
+
+#presentacion,
+#proyectos,
+#habilidades {
+    scroll-margin-top: 100px;
+}
+
+::selection {
+    background: #8153dc;
+    color: white;
+}
+
+/* ANIMACIONES GENERALES */
+
+.hero-texto,
+.hero-foto {
+    opacity: 0;
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.hero-texto {
+    transform: translateX(-35px);
+}
+
+.hero-foto {
+    transform: translateX(35px);
+}
+
+.pagina-cargada .hero-texto,
+.pagina-cargada .hero-foto {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ELEMENTOS QUE APARECEN AL HACER SCROLL */
+
+.revelar {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.revelar.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MOVIMIENTO FLOTANTE DE LA FOTO */
+
+.hero-foto-marco {
+    animation: fotoFlotante 5s ease-in-out infinite;
+}
+
+@keyframes fotoFlotante {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* ACCESIBILIDAD */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }

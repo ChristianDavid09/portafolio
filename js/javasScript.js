@@ -1,7 +1,5 @@
 
-
 async function cargarComponente(id, archivo) {
-
     try {
         const respuesta = await fetch(archivo);
 
@@ -10,7 +8,6 @@ async function cargarComponente(id, archivo) {
         }
 
         const html = await respuesta.text();
-
         document.getElementById(id).innerHTML = html;
 
     } catch (error) {
@@ -18,57 +15,39 @@ async function cargarComponente(id, archivo) {
     }
 }
 
-async function iniciarWeb() {
-
-    await cargarComponente(
-        "header",
-        "components/header.html"
-    );
-
-    await cargarComponente(
-        "presentacion",
-        "components/presentacion.html"
-    );
-
-    await cargarComponente(
-        "proyectos-container",
-        "components/proyectos.html"
-    );
-
-    await cargarComponente(
-        "habilidades-container",
-        "components/habilidades.html"
-    );
-
-    await cargarComponente(
-        "trabajemos-container",
-        "components/trabajemos.html"
-    );
-    await cargarFooter();
-
-}
-
 async function cargarFooter() {
-    try {
-        const respuesta = await fetch("components/footer.html");
+    await cargarComponente("footer-container", "components/footer.html");
 
-        if (!respuesta.ok) {
-            throw new Error("No se pudo cargar el footer");
-        }
+    const anio = document.getElementById("anio-actual");
 
-        const html = await respuesta.text();
-
-        document.getElementById("footer-container").innerHTML = html;
-
-        // Año automático
-        document.getElementById("anio-actual").textContent =
-            new Date().getFullYear();
-
-    } catch (error) {
-        console.error(error);
+    if (anio) {
+        anio.textContent = new Date().getFullYear();
     }
 }
 
+async function iniciarWeb() {
+
+    await cargarComponente("header", "components/header.html");
+
+    await cargarComponente("sobremi-container", "components/sobremi.html");
+
+    await cargarComponente("presentacion", "components/presentacion.html");
+
+    await cargarComponente("proyectos-container", "components/proyectos.html");
+
+    await cargarComponente("habilidades-container", "components/habilidades.html");
+
+    await cargarComponente("trabajemos-container", "components/trabajemos.html");
+
+    await cargarFooter();
+
+    // Activamos las animaciones cuando ya está todo cargado
+    if (typeof inicializarAnimaciones === "function") {
+        inicializarAnimaciones();
+    }
+
+    // Animación de entrada de la página
+    document.body.classList.add("pagina-cargada");
+}
 
 iniciarWeb();
-

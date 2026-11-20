@@ -1,0 +1,149 @@
+
+/* =========================================
+   ANIMACIONES GENERALES
+========================================= */
+
+/* Entrada suave de elementos */
+
+.revelar {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.revelar.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Entrada especial para el título principal */
+
+#presentacion h1,
+#presentacion h2 {
+    animation: aparecerTitulo 1s ease both;
+}
+
+@keyframes aparecerTitulo {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* =========================================
+   BRILLO DINÁMICO DE LAS TARJETAS
+========================================= */
+
+.efecto-brillo {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.efecto-brillo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background: radial-gradient(
+        350px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(177, 133, 255, 0.18),
+        transparent 65%
+    );
+
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.efecto-brillo:hover::before {
+    opacity: 1;
+}
+
+/* =========================================
+   NAVBAR AL HACER SCROLL
+========================================= */
+
+.site-header {
+    transition:
+        background 0.35s ease,
+        box-shadow 0.35s ease,
+        padding 0.35s ease;
+}
+
+.site-header.navbar-scroll {
+    background: rgba(12, 9, 25, 0.94);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(18px);
+}
+
+/* =========================================
+   BARRA DE PROGRESO
+========================================= */
+
+.barra-progreso {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    z-index: 9999;
+
+    background: linear-gradient(
+        90deg,
+        #6845a5,
+        #a985ec,
+        #d6bfff
+    );
+
+    box-shadow: 0 0 12px rgba(169, 133, 236, 0.7);
+}
+
+/* =========================================
+   ACCESIBILIDAD
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .revelar,
+    .site-header,
+    .efecto-brillo::before {
+        transition: none !important;
+    }
+
+    #presentacion h1,
+    #presentacion h2 {
+        animation: none !important;
+    }
+
+    .revelar {
+        opacity: 1;
+        transform: none;
+    }
+}
+body {
+    opacity: 1;
+}
+
+body.pagina-cargada {
+    animation: entradaPagina 0.7s ease both;
+}
+
+@keyframes entradaPagina {
+    from {
+        opacity: 0.85;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

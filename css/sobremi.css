@@ -1,0 +1,388 @@
+
+/* ==========================================
+   SOBRE MÍ - CDM
+========================================== */
+
+.seccion-sobremi {
+    position: relative;
+    overflow: hidden;
+
+    padding: 100px 7%;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(132, 91, 190, 0.13),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(103, 74, 158, 0.12),
+            transparent 35%
+        ),
+        linear-gradient(135deg, #211A30, #292039);
+
+    color: #F5F0FF;
+    box-sizing: border-box;
+
+    scroll-margin-top: 100px;
+}
+
+.sobremi-contenedor {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   CABECERA
+========================================== */
+
+.sobremi-cabecera {
+    max-width: 720px;
+    margin-bottom: 55px;
+}
+
+.sobremi-etiqueta {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: #BFA0FF;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.sobremi-cabecera h2 {
+    margin: 0 0 20px;
+
+    color: #FFFFFF;
+
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 55px);
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+.sobremi-cabecera h2 span {
+    color: #C5A8FF;
+}
+
+.sobremi-cabecera > p {
+    max-width: 620px;
+
+    color: #C5BBD5;
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   DISTRIBUCIÓN PRINCIPAL
+========================================== */
+
+.sobremi-contenido {
+    display: grid;
+
+    grid-template-columns: 1.6fr 0.9fr;
+
+    align-items: start;
+    gap: 65px;
+}
+
+/* ==========================================
+   TEXTO
+========================================== */
+
+.sobremi-texto h3 {
+    margin: 0 0 25px;
+
+    color: #E5D7FF;
+
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.sobremi-texto p {
+    margin: 0 0 20px;
+
+    color: #D0C6DE;
+
+    font-size: 15px;
+    line-height: 1.95;
+
+    text-align: left;
+}
+
+.sobremi-texto .sobremi-destacado {
+    margin-top: 30px;
+    padding: 20px 22px;
+
+    color: #E9DFFF;
+
+    font-weight: 600;
+
+    background: rgba(191, 160, 255, 0.08);
+
+    border-left: 3px solid #BFA0FF;
+    border-radius: 0 12px 12px 0;
+}
+
+/* ==========================================
+   TARJETA PERSONAL
+========================================== */
+
+.sobremi-tarjeta {
+    position: relative;
+    overflow: hidden;
+
+    padding: 35px 30px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(191, 160, 255, 0.2);
+    border-radius: 22px;
+
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18);
+
+    transition: transform 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+.sobremi-tarjeta::before {
+    content: "";
+
+    position: absolute;
+    top: -90px;
+    right: -90px;
+
+    width: 190px;
+    height: 190px;
+
+    background: rgba(164, 124, 239, 0.13);
+
+    filter: blur(45px);
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.sobremi-tarjeta:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(191, 160, 255, 0.5);
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+}
+
+/* ICONO CDM */
+
+.sobremi-tarjeta-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 65px;
+    height: 65px;
+
+    margin-bottom: 25px;
+
+    background: linear-gradient(
+        135deg,
+        #A985EC,
+        #6845A5
+    );
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(144, 103, 220, 0.3);
+}
+
+.sobremi-tarjeta-icono span {
+    color: #FFFFFF;
+
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.sobremi-tarjeta h3 {
+    margin: 0 0 12px;
+
+    color: #FFFFFF;
+    font-size: 21px;
+}
+
+.sobremi-tarjeta > p {
+    margin: 0 0 30px;
+
+    color: #BFB4CF;
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   DATOS PERSONALES
+========================================== */
+
+.sobremi-datos {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+
+    margin-bottom: 30px;
+}
+
+.sobremi-dato {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+}
+
+.dato-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 27px;
+    height: 27px;
+
+    color: #D5BFFF;
+
+    background: rgba(191, 160, 255, 0.12);
+
+    border-radius: 8px;
+}
+
+.sobremi-dato div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.sobremi-dato strong {
+    color: #E7D9FF;
+    font-size: 13px;
+}
+
+.sobremi-dato div span {
+    color: #BDB2CB;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* ==========================================
+   BOTÓN CONTACTO
+========================================== */
+
+.sobremi-boton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 14px 20px;
+
+    color: #FFFFFF;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #9670D9,
+        #704BAF
+    );
+
+    border-radius: 11px;
+
+    box-shadow: 0 6px 20px rgba(133, 91, 205, 0.2);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.sobremi-boton span {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.sobremi-boton:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(151, 112, 217, 0.35);
+}
+
+.sobremi-boton:hover span {
+    transform: translate(3px, -3px);
+}
+
+/* ==========================================
+   TABLETS
+========================================== */
+
+@media (max-width: 950px) {
+
+    .sobremi-contenido {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .sobremi-tarjeta {
+        max-width: 600px;
+    }
+}
+
+/* ==========================================
+   MÓVILES
+========================================== */
+
+@media (max-width: 600px) {
+
+    .seccion-sobremi {
+        padding: 75px 6%;
+    }
+
+    .sobremi-cabecera {
+        margin-bottom: 38px;
+    }
+
+    .sobremi-cabecera h2 {
+        font-size: 36px;
+    }
+
+    .sobremi-texto h3 {
+        font-size: 20px;
+    }
+
+    .sobremi-texto p {
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+    .sobremi-tarjeta {
+        padding: 28px 22px;
+    }
+}
+
+/* RESPETAR PREFERENCIAS DE MOVIMIENTO */
+
+@media (prefers-reduced-motion: reduce) {
+    .sobremi-tarjeta,
+    .sobremi-boton,
+    .sobremi-boton span {
+        transition: none;
+    }
+}

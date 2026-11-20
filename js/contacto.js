@@ -1,3 +1,4 @@
+
 async function cargarCabecera() {
     try {
         const respuesta = await fetch("components/header.html");
@@ -7,14 +8,16 @@ async function cargarCabecera() {
         }
 
         const html = await respuesta.text();
-
         document.getElementById("header").innerHTML = html;
 
         // Cambiar el enlace de Contacto por Inicio
         const enlaceContacto = document.getElementById("enlace-contacto");
 
-        enlaceContacto.textContent = "Inicio";
-        enlaceContacto.href = "index.html";
+        if (enlaceContacto) {
+            enlaceContacto.textContent = "Inicio";
+            enlaceContacto.href = "index.html";
+            enlaceContacto.classList.remove("nav-contacto");
+        }
 
     } catch (error) {
         console.error(error);
@@ -30,35 +33,42 @@ async function cargarFooter() {
         }
 
         const html = await respuesta.text();
-
         document.getElementById("footer-container").innerHTML = html;
 
         // Año automático
-        document.getElementById("anio-actual").textContent =
-            new Date().getFullYear();
+        const anio = document.getElementById("anio-actual");
+
+        if (anio) {
+            anio.textContent = new Date().getFullYear();
+        }
 
     } catch (error) {
         console.error(error);
     }
 }
 
-// Envío del formulario con Netlify Forms (sin recargar la página)
+// =====================================
+// ENVÍO DEL FORMULARIO CON NETLIFY
+// =====================================
+
 function iniciarFormulario() {
     const formulario = document.querySelector(".formulario-contacto");
 
-    if (!formulario) {
-        return;
-    }
+    if (!formulario) return;
 
     const boton = formulario.querySelector(".boton-enviar");
     const estado = document.getElementById("estado-formulario");
-    const textoBoton = boton.textContent;
+
+    if (!boton || !estado) return;
+
+    const textoBoton = boton.innerHTML;
 
     formulario.addEventListener("submit", async (evento) => {
         evento.preventDefault();
 
         boton.disabled = true;
         boton.textContent = "Enviando...";
+
         estado.textContent = "";
         estado.className = "estado-formulario";
 
@@ -67,7 +77,9 @@ function iniciarFormulario() {
 
             const respuesta = await fetch("/", {
                 method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
                 body: new URLSearchParams(datos).toString()
             });
 
@@ -76,21 +88,36 @@ function iniciarFormulario() {
             }
 
             formulario.reset();
-            estado.textContent = "¡Gracias! Tu mensaje se ha enviado correctamente. Te responderé lo antes posible.";
+
+            estado.textContent =
+                "¡Gracias! Tu mensaje se ha enviado correctamente. Te responderé lo antes posible.";
+
             estado.classList.add("estado-ok");
 
         } catch (error) {
             console.error(error);
-            estado.textContent = "Vaya, no se pudo enviar el mensaje. Inténtalo de nuevo en unos minutos.";
+
+            estado.textContent =
+                "Vaya, no se pudo enviar el mensaje. Inténtalo de nuevo en unos minutos.";
+
             estado.classList.add("estado-error");
 
         } finally {
             boton.disabled = false;
-            boton.textContent = textoBoton;
+            boton.innerHTML = textoBoton;
         }
     });
 }
 
-cargarCabecera();
-cargarFooter();
-iniciarFormulario();
+// =====================================
+// INICIALIZACIÓN
+// =====================================
+
+async function iniciarContacto() {
+    await cargarCabecera();
+    await cargarFooter();
+
+    iniciarFormulario();
+}
+
+iniciarContacto();

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Contacto | Christian Murillo</title>
+    <title>Contacto | Christian David Murillo</title>
 
     <meta name="description" content="Contacta con Christian Murillo, desarrollador web.">
     <link rel="icon" type="image/png" href="img/logoCDM.png">
@@ -14,12 +14,13 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- CSS general -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/animaciones.css">
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- CSS de los componentes -->
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/contacto.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -27,92 +28,149 @@
 
 <body>
 
-    <!-- Cabecera -->
+    <!-- HEADER -->
     <div id="header"></div>
 
-    <!-- Contenido de contacto -->
     <main class="pagina-contacto">
 
         <section class="contenedor-contacto">
 
-            <p class="etiqueta-contacto">CONTACTO</p>
+            <!-- PRESENTACIÓN IZQUIERDA -->
+            <div class="contenido-contacto">
 
-            <h1>¡Hablemos!</h1>
+                <span class="sobre-titulo-contacto">04 / HABLEMOS</span>
 
-            <p class="intro-contacto">
-                ¿Tienes una propuesta, un proyecto o una oportunidad laboral?
-                Estaré encantado de leerte.
-            </p>
+                <h1>
+                    Cada gran idea
+                    empieza con
+                    <span>una conversación.</span>
+                </h1>
 
-            <form
-                name="contacto"
-                method="POST"
-                action="/gracias"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
-                class="formulario-contacto"
-            >
+                <p class="intro-contacto">
+                    ¿Tienes un proyecto en mente, una oportunidad
+                    laboral o simplemente quieres intercambiar ideas?
 
-                <input type="hidden" name="form-name" value="contacto">
-                <input type="hidden" name="subject" value="Nuevo mensaje desde el portafolio (%{submissionId})">
-
-                <!-- Campo antispam -->
-                <p class="campo-oculto">
-                    <label>
-                        No rellenes este campo:
-                        <input name="bot-field">
-                    </label>
+                    Me encantará conocerte y saber qué tienes entre manos.
                 </p>
 
-                <div class="campo">
-                    <label for="nombre">Nombre</label>
-                    <input
-                        type="text"
-                        id="nombre"
-                        name="nombre"
-                        placeholder="Tu nombre"
-                        required
-                    >
+                <div class="disponibilidad-contacto">
+                    <span class="punto-contacto"></span>
+                    Disponible para nuevas oportunidades
                 </div>
 
-                <div class="campo">
-                    <label for="email">Correo electrónico</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="tu@email.com"
-                        required
-                    >
+                <div class="detalle-contacto">
+                    <span class="detalle-contacto-icono">✳</span>
+
+                    <p>
+                        Cuéntame tu idea. Estoy deseando descubrir
+                        qué podemos construir juntos.
+                    </p>
                 </div>
 
-                <div class="campo">
-                    <label for="mensaje">Mensaje</label>
-                    <textarea
-                        id="mensaje"
-                        name="mensaje"
-                        rows="6"
-                        placeholder="Escribe aquí tu mensaje..."
-                        required
-                    ></textarea>
+            </div>
+
+            <!-- FORMULARIO DERECHA -->
+            <div class="panel-formulario">
+
+                <div class="cabecera-formulario">
+
+                    <span class="numero-formulario">01 — CONTACTO</span>
+
+                    <h2>Envíame un mensaje.</h2>
+
+                    <p>
+                        Rellena el formulario y me pondré en contacto
+                        contigo lo antes posible.
+                    </p>
+
                 </div>
 
-                <button type="submit" class="boton-enviar">
-                    Enviar mensaje →
-                </button>
+                <form
+                    name="contacto"
+                    method="POST"
+                    action="/gracias"
+                    data-netlify="true"
+                    netlify-honeypot="bot-field"
+                    class="formulario-contacto"
+                >
 
-                <p id="estado-formulario" class="estado-formulario" role="status" aria-live="polite"></p>
+                    <input type="hidden" name="form-name" value="contacto">
+                    <input type="hidden" name="subject" value="Nuevo mensaje desde el portafolio (%{submissionId})">
 
-            </form>
+                    <!-- CAMPO ANTISPAM -->
+                    <p class="campo-oculto">
+                        <label>
+                            No rellenes este campo:
+                            <input name="bot-field">
+                        </label>
+                    </p>
+
+                    <div class="campo">
+                        <label for="nombre">Tu nombre</label>
+
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            placeholder="¿Cómo te llamas?"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">Correo electrónico</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="tu@email.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="mensaje">Cuéntame tu idea</label>
+
+                        <textarea
+                            id="mensaje"
+                            name="mensaje"
+                            rows="5"
+                            placeholder="Escribe aquí tu mensaje..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="boton-enviar">
+                        <span>Enviar mensaje</span>
+                        <span class="flecha-enviar">↗</span>
+                    </button>
+
+                    <p class="nota-formulario">
+                        ✳ Gracias por tomarte un momento para escribirme.
+                    </p>
+
+                    <p
+                        id="estado-formulario"
+                        class="estado-formulario"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+
+                </form>
+
+            </div>
 
         </section>
 
     </main>
 
-    <!-- Pie de página -->
+    <!-- FOOTER -->
     <div id="footer-container"></div>
 
-    <!-- JavaScript -->
+    <!-- JAVASCRIPT -->
     <script src="js/contacto.js"></script>
 
 </body>

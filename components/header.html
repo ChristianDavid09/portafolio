@@ -1,58 +1,69 @@
 
-<header>
+<header class="site-header">
     <nav class="navbar">
 
-        <!-- Foto de perfil: siempre vuelve al inicio -->
-        <div class="perfil">
-            <a href="index.html" aria-label="Volver al inicio">
+        <!-- LOGOTIPO / PERFIL -->
+        <a href="index.html" class="brand" aria-label="Volver al inicio">
+            <div class="perfil">
                 <img src="img/foto_perfil.png" alt="Foto de Christian">
-            </a>
-        </div>
+            </div>
 
+            <div class="brand-info">
+                <span class="brand-name">CDM<span>.</span></span>
+                <span class="brand-subtitle">DESARROLLADOR WEB</span>
+            </div>
+        </a>
+
+        <!-- NAVEGACIÓN -->
         <ul class="nav-links">
 
             <li>
-                <a href="index.html#presentacion">Presentación</a>
+                <a href="index.html#sobre-mi" class="nav-link">
+                    Sobre mí
+                </a>
             </li>
 
             <li>
-                <a href="index.html#proyectos">Proyectos</a>
+                <a href="index.html#proyectos" class="nav-link">
+                    Proyectos
+                </a>
             </li>
 
             <li>
-                <a href="index.html#habilidades">Habilidades</a>
+                <a href="index.html#habilidades" class="nav-link">
+                    Habilidades
+                </a>
             </li>
 
             <li>
-                <a href="contacto.html" id="enlace-contacto">
+                <a href="contacto.html"
+                   id="enlace-contacto"
+                   class="nav-link nav-contacto">
                     Contacto
+                    <span class="flecha-contacto">↗</span>
                 </a>
             </li>
 
         </ul>
 
+        <!-- REDES SOCIALES -->
         <div class="header-redes">
-        
-            <!-- GitHub -->
+
             <a href="https://github.com/ChristianDavid09"
                target="_blank"
                rel="noopener noreferrer"
-               aria-label="Mi GitHub">
-
+               aria-label="GitHub">
                 <img src="img/github.png" alt="GitHub">
             </a>
-        
-            <!-- LinkedIn -->
+
             <a href="https://www.linkedin.com/in/christian-david-murillo-mart%C3%ADnez-0820ab209/"
                target="_blank"
                rel="noopener noreferrer"
-               aria-label="Mi LinkedIn">
-
+               aria-label="LinkedIn">
                 <img src="img/linkdin.png" alt="LinkedIn">
             </a>
-        
-        </div>
 
+        </div>
 
     </nav>
 </header>

@@ -1,28 +1,109 @@
 
-/* FOOTER */
+/* ==========================================
+   FOOTER PREMIUM - CDM
+========================================== */
 
 .footer {
+    position: relative;
     width: 100%;
     box-sizing: border-box;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 45px 7% 20px;
 
-    padding: 25px 7%;
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(116, 82, 170, 0.13),
+            transparent 65%
+        ),
+        #171321;
 
-    background: #171321;
     color: #F5F0FF;
 
     border-top: 1px solid rgba(191, 160, 255, 0.2);
 }
 
-/* REDES SOCIALES */
+/* ==========================================
+   CONTENIDO PRINCIPAL
+========================================== */
+
+.footer-contenido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 1350px;
+    margin: 0 auto;
+
+    gap: 30px;
+    padding-bottom: 35px;
+}
+
+/* ==========================================
+   IDENTIDAD
+========================================== */
+
+.footer-marca {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.footer-logo {
+    width: fit-content;
+
+    color: #FFFFFF;
+
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    text-decoration: none;
+
+    transition: transform 0.3s ease;
+}
+
+.footer-logo span {
+    color: #BFA0FF;
+}
+
+.footer-logo:hover {
+    transform: translateY(-2px);
+}
+
+.footer-marca p {
+    margin: 0;
+
+    color: #A99DBB;
+
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+/* ==========================================
+   REDES SOCIALES
+========================================== */
+
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 13px;
+}
+
+.footer-social-titulo {
+    color: #A99DBB;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
 
 .footer-redes {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 12px;
 }
 
 .footer-redes a {
@@ -30,38 +111,122 @@
     align-items: center;
     justify-content: center;
 
-    width: 38px;
-    height: 38px;
+    width: 43px;
+    height: 43px;
 
-    transition: transform 0.3s ease;
+    border: 1px solid rgba(191, 160, 255, 0.2);
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    transition: transform 0.3s ease,
+                background 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
 }
 
 .footer-redes img {
-    width: 100%;
-    height: 100%;
+    width: 22px;
+    height: 22px;
+
     object-fit: contain;
 }
 
 .footer-redes a:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
+
+    background: rgba(191, 160, 255, 0.14);
+
+    border-color: #BFA0FF;
+
+    box-shadow: 0 5px 18px rgba(167, 139, 250, 0.18);
 }
 
-/* AUTOR */
+/* ==========================================
+   PARTE INFERIOR
+========================================== */
 
-.footer-autor p {
+.footer-inferior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 1350px;
+    margin: 0 auto;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(191, 160, 255, 0.13);
+
+    gap: 20px;
+}
+
+.footer-inferior p {
     margin: 0;
-    font-size: 14px;
-    font-weight: 600;
-    color: #D8D0E8;
+
+    color: #8F849F;
+
+    font-size: 12px;
+    line-height: 1.6;
 }
 
-/* MÓVILES */
+.footer-volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 
-@media (max-width: 600px) {
+    color: #CDB5FF;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.footer-volver span {
+    font-size: 17px;
+}
+
+.footer-volver:hover {
+    color: #FFFFFF;
+    transform: translateY(-3px);
+}
+
+/* ==========================================
+   MÓVILES
+========================================== */
+
+@media (max-width: 650px) {
+
     .footer {
+        padding: 35px 20px 20px;
+    }
+
+    .footer-contenido {
         flex-direction: column;
-        gap: 18px;
-        padding: 25px 15px;
         text-align: center;
+        gap: 28px;
+        padding-bottom: 28px;
+    }
+
+    .footer-marca {
+        align-items: center;
+    }
+
+    .footer-social {
+        align-items: center;
+    }
+
+    .footer-inferior {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .footer-inferior p {
+        font-size: 11px;
     }
 }

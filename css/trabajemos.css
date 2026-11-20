@@ -1,67 +1,131 @@
 
-/* =================================
-   SECCIÓN TRABAJEMOS JUNTOS
-================================= */
+/* ==========================================
+   TRABAJEMOS JUNTOS - CREATIVE CTA
+========================================== */
 
 .seccion-trabajemos {
     width: 86%;
     max-width: 1250px;
-    margin: 90px auto 80px;
+    margin: 130px auto 110px;
 }
+
+/* CONTENEDOR PRINCIPAL */
 
 .contenedor-trabajemos {
     position: relative;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    min-height: 440px;
+    padding: 65px 7%;
+
     overflow: hidden;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    background:
+        radial-gradient(
+            circle at 85% 50%,
+            rgba(111, 65, 202, 0.24),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #201633,
+            #151020 65%,
+            #100d1c
+        );
 
-    padding: 65px 35px;
+    border: 1px solid rgba(169, 138, 255, 0.35);
+    border-radius: 25px;
 
-    background: linear-gradient(
-        135deg,
-        #292044,
-        #493080,
-        #302052
-    );
-
-    border: 1px solid rgba(191, 160, 255, 0.45);
-    border-radius: 20px;
-
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.3);
 }
 
-/* ETIQUETA SUPERIOR */
+/* BRILLO DE FONDO */
+
+.contenedor-trabajemos::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    right: 5%;
+    top: 0;
+
+    background: #7844e8;
+    filter: blur(150px);
+    opacity: 0.16;
+
+    pointer-events: none;
+}
+
+/* CONTENIDO */
+
+.contenido-trabajemos {
+    position: relative;
+    z-index: 3;
+    max-width: 590px;
+}
+
+/* DISPONIBILIDAD */
+
+.estado-trabajemos {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 35px;
+
+    color: #bca5ff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.punto-trabajemos {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #8dffbd;
+    box-shadow: 0 0 12px #8dffbd;
+
+    animation: pulsoDisponibilidad 2s infinite;
+}
+
+/* ETIQUETA */
 
 .etiqueta-trabajemos {
-    color: #D8B4FE;
-    font-size: 13px;
+    color: #a98aff;
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 3px;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 }
 
 /* TÍTULO */
 
 .contenedor-trabajemos h2 {
-    color: #FFFFFF;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 42px;
-    font-weight: 800;
-    margin-bottom: 20px;
-    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(43px, 5vw, 65px);
+    font-weight: 500;
+    line-height: 1.12;
+    letter-spacing: -1px;
 }
 
-/* TEXTO */
+.contenedor-trabajemos h2 span {
+    display: block;
+    color: #a98aff;
+    font-style: italic;
+}
+
+/* DESCRIPCIÓN */
 
 .texto-trabajemos {
-    max-width: 650px;
-    color: #F0EAFB;
-    font-size: 16px;
-    line-height: 1.8;
-    margin-bottom: 30px;
+    max-width: 520px;
+    margin-top: 22px;
+
+    color: #bcb2ce;
+    font-size: 14px;
+    line-height: 1.9;
 }
 
 /* BOTÓN */
@@ -69,73 +133,402 @@
 .boton-contacto {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 12px;
+    gap: 25px;
 
-    padding: 14px 28px;
+    margin-top: 32px;
+    padding: 15px 20px 15px 24px;
 
-    color: #292044;
-    background: #FFFFFF;
+    color: #fff;
+    background: linear-gradient(
+        110deg,
+        #8151ed,
+        #536feb
+    );
 
+    border: 1px solid rgba(255,255,255,0.15);
     border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 700;
     text-decoration: none;
 
-    font-size: 16px;
-    font-weight: 700;
+    box-shadow: 0 8px 25px #7448db44;
 
     transition:
         transform 0.3s ease,
-        background 0.3s ease,
         box-shadow 0.3s ease;
 }
 
-.boton-contacto span {
-    font-size: 20px;
+.boton-contacto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 13px 35px #7448db77;
+}
+
+.flecha-contacto {
+    width: 32px;
+    height: 32px;
+
+    display: grid;
+    place-items: center;
+
+    background: rgba(255,255,255,0.16);
+    border-radius: 8px;
+
+    font-size: 19px;
+
     transition: transform 0.3s ease;
 }
 
-.boton-contacto:hover {
-    background: #D8B4FE;
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+.boton-contacto:hover .flecha-contacto {
+    transform: translate(3px, -3px);
 }
 
-.boton-contacto:hover span {
-    transform: translateX(5px);
+/* NOTA INFERIOR */
+
+.nota-trabajemos {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 35px;
+
+    color: #817795;
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-style: italic;
 }
 
-/* =================================
+.nota-trabajemos span {
+    color: #a98aff;
+    font-size: 19px;
+}
+
+/* ==========================================
+   UNIVERSO ANIMADO
+========================================== */
+
+.grafico-trabajemos {
+    position: relative;
+    width: 100%;
+    max-width: 370px;
+    aspect-ratio: 1;
+    justify-self: center;
+
+    display: grid;
+    place-items: center;
+}
+
+/* ÓRBITAS */
+
+.orbita {
+    position: absolute;
+    border: 1px solid rgba(169, 138, 255, 0.3);
+    border-radius: 50%;
+}
+
+.orbita-externa {
+    width: 100%;
+    height: 100%;
+    animation: girarOrbita 25s linear infinite;
+}
+
+.orbita-interna {
+    width: 72%;
+    height: 72%;
+    border-style: dashed;
+    animation: girarOrbita 18s linear infinite reverse;
+}
+
+/* NÚCLEO */
+
+.nucleo-orbita {
+    position: relative;
+    z-index: 2;
+
+    width: 155px;
+    height: 155px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    background: linear-gradient(
+        145deg,
+        #352453,
+        #1c1530
+    );
+
+    border: 1px solid #b69aff88;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 35px #8b5cf633,
+        inset 0 0 30px #8b5cf622;
+
+    animation: flotarNucleo 5s ease-in-out infinite;
+}
+
+.nucleo-orbita span {
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 600;
+}
+
+.nucleo-orbita small {
+    color: #bba2ff;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+/* PARTÍCULAS */
+
+.particula {
+    position: absolute;
+    z-index: 3;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #b69aff;
+    box-shadow: 0 0 18px #a98aff;
+}
+
+.particula-uno {
+    top: 9%;
+    left: 50%;
+    animation: pulsoParticula 3s infinite;
+}
+
+.particula-dos {
+    bottom: 20%;
+    left: 8%;
+    width: 7px;
+    height: 7px;
+    animation: pulsoParticula 4s infinite 1s;
+}
+
+.particula-tres {
+    right: 9%;
+    top: 65%;
+    width: 8px;
+    height: 8px;
+    animation: pulsoParticula 3.5s infinite 0.5s;
+}
+
+/* SÍMBOLOS FLOTANTES */
+
+.simbolo-flotante {
+    position: absolute;
+    z-index: 4;
+
+    display: grid;
+    place-items: center;
+
+    color: #d0bcff;
+    background: rgba(38, 27, 61, 0.9);
+    border: 1px solid #a98aff55;
+    border-radius: 14px;
+
+    box-shadow: 0 8px 30px #00000044;
+
+    font-weight: 700;
+}
+
+.simbolo-uno {
+    top: 13%;
+    right: 5%;
+    padding: 13px 16px;
+    font-size: 19px;
+    animation: flotarSimbolo 5s ease-in-out infinite;
+}
+
+.simbolo-dos {
+    bottom: 12%;
+    right: 12%;
+    padding: 12px 17px;
+    font-size: 22px;
+    animation: flotarSimbolo 6s ease-in-out infinite 1s;
+}
+
+.simbolo-tres {
+    bottom: 15%;
+    left: 12%;
+    padding: 10px 14px;
+    font-size: 24px;
+    animation: flotarSimbolo 4.5s ease-in-out infinite 0.5s;
+}
+
+/* DECORACIONES DE FONDO */
+
+.decoracion-trabajemos {
+    position: absolute;
+    border: 1px solid #a98aff20;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.decoracion-uno {
+    width: 300px;
+    height: 300px;
+    top: -200px;
+    left: -100px;
+}
+
+.decoracion-dos {
+    width: 200px;
+    height: 200px;
+    bottom: -140px;
+    left: 30%;
+}
+
+/* ==========================================
+   KEYFRAMES
+========================================== */
+
+@keyframes girarOrbita {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes flotarNucleo {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes flotarSimbolo {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-13px) rotate(5deg);
+    }
+}
+
+@keyframes pulsoParticula {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+@keyframes pulsoDisponibilidad {
+    0%, 100% {
+        box-shadow: 0 0 5px #8dffbd;
+    }
+
+    50% {
+        box-shadow: 0 0 18px #8dffbd;
+    }
+}
+
+/* ==========================================
    RESPONSIVE
-================================= */
+========================================== */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
+
+    .seccion-trabajemos {
+        width: 90%;
+        margin: 90px auto 70px;
+    }
+
+    .contenedor-trabajemos {
+        grid-template-columns: 1fr;
+        padding: 55px 8%;
+    }
+
+    .contenido-trabajemos {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .grafico-trabajemos {
+        width: min(75%, 300px);
+        margin-top: 40px;
+    }
+
+    .texto-trabajemos {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .nota-trabajemos {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
 
     .seccion-trabajemos {
         width: 92%;
-        margin: 55px auto 45px;
+        margin: 70px auto 55px;
     }
 
     .contenedor-trabajemos {
         padding: 45px 20px;
-        border-radius: 15px;
-    }
-
-    .etiqueta-trabajemos {
-        font-size: 11px;
-        letter-spacing: 2px;
+        border-radius: 18px;
     }
 
     .contenedor-trabajemos h2 {
-        font-size: 30px;
+        font-size: 42px;
+    }
+
+    .etiqueta-trabajemos {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .estado-trabajemos {
+        font-size: 9px;
     }
 
     .texto-trabajemos {
-        font-size: 14px;
-        line-height: 1.7;
+        font-size: 13px;
     }
 
-    .boton-contacto {
-        padding: 12px 24px;
-        font-size: 14px;
+    .grafico-trabajemos {
+        width: 85%;
+    }
+
+    .nucleo-orbita {
+        width: 125px;
+        height: 125px;
+    }
+
+    .nucleo-orbita span {
+        font-size: 30px;
+    }
+
+    .nota-trabajemos {
+        font-size: 11px;
+    }
+}
+
+/* ACCESIBILIDAD */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .contenedor-trabajemos *,
+    .contenedor-trabajemos::before {
+        animation: none !important;
+        transition: none !important;
     }
 }
