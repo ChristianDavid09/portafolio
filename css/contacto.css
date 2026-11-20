@@ -92,6 +92,51 @@
     transform: translateY(-2px);
 }
 
+.boton-enviar:disabled {
+    opacity: 0.7;
+    cursor: wait;
+    transform: none;
+}
+
+.estado-formulario {
+    margin: 0;
+    text-align: center;
+    line-height: 1.6;
+    font-weight: 600;
+}
+
+.estado-formulario:empty {
+    display: none;
+}
+
+.estado-ok {
+    color: #9BE7B0;
+}
+
+.estado-error {
+    color: #FF9C9C;
+}
+
+.boton-volver {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 15px 30px;
+    border-radius: 8px;
+    background: #BFA0FF;
+    color: #211B30;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.boton-volver:hover {
+    background: #D5C2FF;
+}
+
+.contenedor-gracias {
+    text-align: center;
+}
+
 .campo-oculto {
     position: absolute;
     overflow: hidden;

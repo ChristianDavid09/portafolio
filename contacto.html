@@ -9,6 +9,7 @@
     <title>Contacto | Christian Murillo</title>
 
     <meta name="description" content="Contacta con Christian Murillo, desarrollador web.">
+    <link rel="icon" type="image/png" href="img/logoCDM.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,6 +22,7 @@
     <!-- CSS de los componentes -->
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 
 <body>
@@ -45,12 +47,14 @@
             <form
                 name="contacto"
                 method="POST"
+                action="/gracias"
                 data-netlify="true"
                 netlify-honeypot="bot-field"
                 class="formulario-contacto"
             >
 
                 <input type="hidden" name="form-name" value="contacto">
+                <input type="hidden" name="subject" value="Nuevo mensaje desde el portafolio (%{submissionId})">
 
                 <!-- Campo antispam -->
                 <p class="campo-oculto">
@@ -97,11 +101,16 @@
                     Enviar mensaje →
                 </button>
 
+                <p id="estado-formulario" class="estado-formulario" role="status" aria-live="polite"></p>
+
             </form>
 
         </section>
 
     </main>
+
+    <!-- Pie de página -->
+    <div id="footer-container"></div>
 
     <!-- JavaScript -->
     <script src="js/contacto.js"></script>
