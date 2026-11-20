@@ -1,0 +1,168 @@
+
+/* ==========================================
+   HEADER - BARRA DE NAVEGACIÓN
+========================================== */
+
+header {
+    width: 100%;
+    padding: 15px 7%;
+
+    background: #292238;
+
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.35);
+}
+
+/* ==========================================
+   BARRA DE NAVEGACIÓN
+========================================== */
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 55px;
+}
+
+
+/* ==========================================
+   PERFIL: FOTO Y NOMBRE
+========================================== */
+
+.perfil {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.perfil img {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 2px solid #BFA0FF;
+}
+
+.perfil h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+/* ==========================================
+   ENLACES DE NAVEGACIÓN
+========================================== */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    list-style: none;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    display: block;
+    padding: 10px 0;
+
+    color: #F5F0FF;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+/* EFECTO HOVER */
+
+.nav-links a:hover {
+    color: #BFA0FF;
+}
+
+/* ==========================================
+   MENÚS DESPLEGABLES
+========================================== */
+
+.dropdown {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    min-width: 190px;
+
+    background: #38304D;
+
+    border: 1px solid rgba(191, 160, 255, 0.15);
+    border-radius: 10px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+
+    list-style: none;
+
+    z-index: 100;
+}
+
+/* ENLACES DEL DESPLEGABLE */
+
+.dropdown li a {
+    padding: 13px 16px;
+
+    color: #FFFFFF;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: background 0.3s ease,
+                color 0.3s ease;
+}
+
+/* HOVER DEL DESPLEGABLE */
+
+.dropdown li a:hover {
+    background: #51416F;
+    color: #D6BFFF;
+}
+
+/* MOSTRAR DESPLEGABLE */
+
+.nav-links li:hover > .dropdown,
+.nav-links li:focus-within > .dropdown {
+    display: block;
+}
+
+/* ==========================================
+   ADAPTACIÓN A MÓVILES
+========================================== */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .perfil h2 {
+        font-size: 18px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+}

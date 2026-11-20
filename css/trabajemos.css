@@ -1,0 +1,141 @@
+
+/* =================================
+   SECCIÓN TRABAJEMOS JUNTOS
+================================= */
+
+.seccion-trabajemos {
+    width: 86%;
+    max-width: 1250px;
+    margin: 90px auto 80px;
+}
+
+.contenedor-trabajemos {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    padding: 65px 35px;
+
+    background: linear-gradient(
+        135deg,
+        #292044,
+        #493080,
+        #302052
+    );
+
+    border: 1px solid rgba(191, 160, 255, 0.45);
+    border-radius: 20px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* ETIQUETA SUPERIOR */
+
+.etiqueta-trabajemos {
+    color: #D8B4FE;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+/* TÍTULO */
+
+.contenedor-trabajemos h2 {
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* TEXTO */
+
+.texto-trabajemos {
+    max-width: 650px;
+    color: #F0EAFB;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* BOTÓN */
+
+.boton-contacto {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 14px 28px;
+
+    color: #292044;
+    background: #FFFFFF;
+
+    border-radius: 10px;
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.boton-contacto span {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.boton-contacto:hover {
+    background: #D8B4FE;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.boton-contacto:hover span {
+    transform: translateX(5px);
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 800px) {
+
+    .seccion-trabajemos {
+        width: 92%;
+        margin: 55px auto 45px;
+    }
+
+    .contenedor-trabajemos {
+        padding: 45px 20px;
+        border-radius: 15px;
+    }
+
+    .etiqueta-trabajemos {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .contenedor-trabajemos h2 {
+        font-size: 30px;
+    }
+
+    .texto-trabajemos {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .boton-contacto {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}

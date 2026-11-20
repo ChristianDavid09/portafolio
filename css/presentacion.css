@@ -1,0 +1,152 @@
+
+/* =================================
+   PRESENTACIÓN
+================================= */
+
+/* CONTENEDOR PRINCIPAL */
+
+.contenido-principal {
+    width: 86%;
+    max-width: 1250px;
+    margin: 50px auto;
+}
+
+/* TÍTULO DE BIENVENIDA */
+
+.titulo-bienvenida {
+    text-align: center;
+    color: white;
+
+    font-size: 38px;
+
+    margin-bottom: 45px;
+}
+
+/* DISTRIBUCIÓN DE CONTENEDORES */
+
+.presentacion {
+    display: grid;
+
+    grid-template-columns: 0.85fr 1.5fr;
+
+    gap: 35px;
+    align-items: stretch;
+}
+
+/* CONTENEDOR DE LA FOTOGRAFÍA */
+
+.foto-presentacion {
+    background: white;
+
+    padding: 15px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 12px 30px rgba(20, 10, 60, 0.25);
+
+    min-height: 380px;
+}
+
+.foto-presentacion img {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    display: block;
+}
+
+/* CONTENEDOR DEL TEXTO */
+
+.texto-presentacion {
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 12px 30px rgba(20, 10, 60, 0.18);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 20px;
+}
+
+/* TÍTULO PERSONAL */
+
+.texto-presentacion h2 {
+    color: #7928CA;
+    font-size: 28px;
+}
+
+/* PÁRRAFOS */
+
+.texto-presentacion p {
+    color: #444444;
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .contenido-principal {
+        width: 90%;
+    }
+
+    .presentacion {
+        grid-template-columns: 1fr;
+    }
+
+    
+/* CONTENEDOR DE LA FOTOGRAFÍA */
+
+
+/* CONTENEDOR DE LA FOTOGRAFÍA */
+
+
+/* CONTENEDOR DE LA FOTOGRAFÍA */
+
+.foto-presentacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+}
+
+/* FOTOGRAFÍA CUADRADA */
+
+.foto-presentacion img {
+    width: 320px;
+    height: 320px;
+
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 12px;
+
+    display: block;
+}
+
+
+
+
+    .titulo-bienvenida {
+        font-size: 29px;
+    }
+
+    .texto-presentacion {
+        padding: 25px;
+    }
+}
