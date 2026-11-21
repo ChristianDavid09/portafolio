@@ -324,18 +324,25 @@
     }
 }
 
+
 /* ==========================================
    MÓVILES
 ========================================== */
 
 @media (max-width: 760px) {
 
-    .navbar {
-        flex-wrap: wrap;
-        justify-content: center;
+    .site-header {
+        background: rgba(20, 16, 32, 0.97);
+    }
 
-        gap: 10px 20px;
-        padding: 12px 15px;
+    .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        gap: 8px 12px;
+        padding: 10px 15px 12px;
     }
 
     .brand {
@@ -349,6 +356,10 @@
 
     .brand-name {
         font-size: 19px;
+    }
+
+    .brand-subtitle {
+        font-size: 8px;
     }
 
     .header-redes {
@@ -367,18 +378,21 @@
 
     .nav-links {
         order: 3;
-
         width: 100%;
 
+        display: flex;
         justify-content: center;
+        align-items: center;
         flex-wrap: wrap;
 
-        gap: 4px 20px;
+        gap: 5px 18px;
+        margin: 0;
+        padding: 5px 0 0;
     }
 
     .nav-link {
         font-size: 12px;
-        padding: 8px 0;
+        padding: 7px 0;
     }
 
     .nav-links .nav-contacto {
@@ -386,26 +400,48 @@
     }
 }
 
-/* PANTALLAS MUY PEQUEÑAS */
+/* ==========================================
+   MÓVILES MUY PEQUEÑOS
+========================================== */
 
 @media (max-width: 380px) {
 
     .navbar {
-        gap: 10px;
+        gap: 8px;
+        padding: 9px 10px 11px;
+    }
+
+    .brand {
+        gap: 8px;
+    }
+
+    .perfil {
+        width: 39px;
+        height: 39px;
+    }
+
+    .brand-name {
+        font-size: 17px;
     }
 
     .brand-subtitle {
-        letter-spacing: 1px;
+        font-size: 7px;
+        letter-spacing: 0.8px;
+    }
+
+    .header-redes {
+        gap: 7px;
     }
 
     .nav-links {
-        gap: 4px 13px;
+        gap: 5px 12px;
     }
 
     .nav-link {
         font-size: 11px;
     }
 }
+
 
 /* RESPETAR PREFERENCIAS DE MOVIMIENTO */
 
